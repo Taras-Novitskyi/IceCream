@@ -1,0 +1,2 @@
+!function(){var t={openAboutBtn:document.querySelector(".about__button"),closeAboutBtn:document.querySelector(".about__button-close"),about:document.querySelector(".about__modal"),body:document.querySelector("body")};function o(){t.about.classList.toggle("is-hidden"),t.body.classList.toggle("no-scroll")}t.openAboutBtn.addEventListener("click",o),t.closeAboutBtn.addEventListener("click",o)}();
+//# sourceMappingURL=index.cbec5db7.js.map

@@ -1,0 +1,2 @@
+!function(){var t=document.querySelectorAll("[data-products-button]");document.querySelectorAll("[data-products]"),t.forEach((function(t){t.addEventListener("click",(function(e){var r=e.currentTarget.previousElementSibling,n="true"===t.getAttribute("aria-expanded")||!1;t.classList.toggle("is-open"),t.setAttribute("aria-expanded",!n),r.classList.toggle("is-open")}))}))}();
+//# sourceMappingURL=index.5e9f7435.js.map

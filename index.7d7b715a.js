@@ -1,0 +1,2 @@
+(()=>{const t={openAboutBtn:document.querySelector(".about__button"),closeAboutBtn:document.querySelector(".about__button-close"),about:document.querySelector(".about__modal"),body:document.querySelector("body")};function o(){t.about.classList.toggle("is-hidden"),t.body.classList.toggle("no-scroll")}t.openAboutBtn.addEventListener("click",o),t.closeAboutBtn.addEventListener("click",o)})();
+//# sourceMappingURL=index.7d7b715a.js.map

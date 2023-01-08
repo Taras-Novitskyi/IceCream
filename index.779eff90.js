@@ -1,0 +1,2 @@
+(()=>{const t=document.querySelectorAll("[data-products-button]");document.querySelectorAll("[data-products]");t.forEach((t=>{t.addEventListener("click",(e=>{const r=e.currentTarget.previousElementSibling,a="true"===t.getAttribute("aria-expanded")||!1;t.classList.toggle("is-open"),t.setAttribute("aria-expanded",!a),r.classList.toggle("is-open")}))}))})();
+//# sourceMappingURL=index.779eff90.js.map
