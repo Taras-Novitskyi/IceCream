@@ -1,0 +1,309 @@
+.contacts {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-image: linear-gradient(
+    to bottom,
+    $main-textColor 23%,
+    $bgColor-secondary 23%
+  );
+
+  @include tablet {
+    background-image: linear-gradient(
+      to bottom,
+      $main-textColor 47%,
+      $bgColor-secondary 47%
+    );
+  }
+  @include desktop {
+    background-image: linear-gradient(
+      to bottom,
+      $main-textColor 19%,
+      $bgColor-secondary 19%
+    );
+  }
+
+  &__container {
+    position: relative;
+    padding: 0px 20px;
+
+    @include tablet {
+      padding: 0px 16px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: row;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    max-width: 280px;
+    padding: 40px 32px;
+    background-color: $main-textColor;
+    box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.1);
+    border-radius: 24px;
+
+    @include mobile-only {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      &:last-child {
+        margin-bottom: 32px;
+      }
+    }
+    &:not(:last-child) {
+      @include tablet {
+        margin-right: 32px;
+      }
+    }
+    @include tablet {
+      margin-bottom: 0px;
+    }
+    @include desktop {
+      max-width: 368px;
+    }
+  }
+
+  &__item-name {
+    @include flexCenter();
+
+    min-width: 60px;
+    height: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-left: 22px;
+    padding-right: 22px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+    background-color: $accessory-color1;
+    color: $main-textColor;
+    border-radius: 4px;
+
+    @include tablet {
+      height: 28px;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-bottom: 32px;
+      font-size: 16px;
+      line-height: 1.86;
+      border-radius: 6px;
+    }
+
+    &--other {
+      background-color: $accessory-color2;
+    }
+  }
+
+  &__place {
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e1e1e1;
+
+    @include tablet {
+      margin-bottom: 32px;
+    }
+  }
+  &__city {
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.83;
+    letter-spacing: 0.04em;
+    color: $secondary-textColor;
+
+    @include tablet {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+  }
+  &__info {
+    margin-bottom: 24px;
+    margin-right: 37px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $description-textColor;
+
+    @include tablet {
+      margin-bottom: 32px;
+      margin-right: 1px;
+
+      font-size: 14px;
+      line-height: 1.66;
+    }
+  }
+  &__schedule {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e1e1e1;
+
+    @include tablet {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+    }
+  }
+  &__schedule-item {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+  &__days {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.83;
+    color: $secondary-textColor;
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+  &__time {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.83;
+    color: $accent-secondaryColor;
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+  &__link-wrap {
+    @include desktop {
+      margin-right: 39px;
+    }
+  }
+  &__link {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $description-textColor;
+
+    &:hover,
+    &:focus {
+      color: $accent-mainColor;
+    }
+
+    &:first-child {
+      margin-bottom: 10px;
+    }
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 1.83;
+    }
+
+    @include desktop {
+      font-size: 16px;
+      line-height: 1.83;
+    }
+  }
+  &__buttons {
+    @include flexCenter();
+    flex-direction: column;
+    gap: 15px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+    }
+  }
+
+  &__button-icon {
+    margin-left: 8px;
+
+    @include tablet {
+      margin-left: 13px;
+    }
+  }
+}
+
+.contacts-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  padding: 30px;
+  max-width: 700px;
+  width: 100%;
+
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(255, 184, 202, 1);
+  border-radius: 4px;
+  opacity: 1;
+
+  @include transition($property1: opacity, $property2: transform);
+
+  &.is-hidden {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  &__title {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    color: $accent-mainColor;
+    min-width: 200px;
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+
+    @include flexCenter();
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    color: $secondary-textColor;
+    background-color: $bgColor-secondary;
+
+    @include transition($property1: color);
+
+    &:hover,
+    &:focus {
+      color: #d41340;
+    }
+  }
+
+  &__icon-close {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+}
+
+.map-responsive {
+  position: relative;
+  // min-width: 500px;
+  height: 200px;
+}
+.google-map {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+.no-scroll {
+  overflow: hidden;
+}

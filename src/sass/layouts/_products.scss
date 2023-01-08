@@ -1,0 +1,333 @@
+.products {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__container {
+    @include mobile-only {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &__card {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    display: block;
+    width: 280px;
+    padding-top: 160px;
+    padding-right: 39px;
+    padding-left: 39px;
+    padding-bottom: 40px;
+    border-radius: 24px;
+
+    margin-top: 140px;
+    position: relative;
+
+    @include tablet {
+      width: calc((100% - 32px) / 3);
+      padding-top: 118px;
+      padding-right: 32px;
+      padding-left: 32px;
+      margin-top: 138px;
+    }
+
+    &:not(:last-child) {
+      @include tablet {
+        margin-right: 16px;
+      }
+    }
+
+    @include desktop {
+      width: calc((100% - 64px) / 3);
+      margin-top: 281px;
+      padding-top: 150px;
+    }
+
+    &:not(:last-child) {
+      @include desktop {
+        margin-right: 32px;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('.././images/products/ice-cream-280-min.png');
+
+      @include retina {
+        background-image: url('.././images/products/ice-cream-280@2x-min.png');
+      }
+
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 280px;
+
+      transform: translateY(-50%);
+
+      @include tablet {
+        height: 224px;
+        background-image: url('.././images/products/ice-cream-224-min.png');
+
+        @include retina {
+          background-image: url('.././images/products/ice-cream-224@2x-min.png');
+        }
+
+        transform: translateY(-60%);
+      }
+
+      @include desktop {
+        height: 394px;
+        background-image: url('.././images/products/ice-cream-368-min.png');
+
+        @include retina {
+          background-image: url('.././images/products/ice-cream-368@2x-min.png');
+        }
+
+        transform: translateY(-70%);
+      }
+    }
+
+    &:nth-child(1) {
+      background-color: $bgColor-hero;
+    }
+
+    &:nth-child(2) {
+      background-color: $accessory-color1;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url('.././images/products/ice-coffy-280-min.png');
+
+        @include retina {
+          background-image: url('.././images/products/ice-coffy-280@2x-min.png');
+        }
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 280px;
+
+        transform: translateY(-50%);
+
+        @include tablet {
+          height: 224px;
+          background-image: url('.././images/products/ice-coffy-224-min.png');
+
+          @include retina {
+            background-image: url('.././images/products/ice-coffy-224@2x-min.png');
+          }
+
+          transform: translateY(-60%);
+        }
+
+        @include desktop {
+          height: 394px;
+          background-image: url('.././images/products/ice-coffy-368-min.png');
+
+          @include retina {
+            background-image: url('.././images/products/ice-coffy-368@2x-min.png');
+          }
+
+          transform: translateY(-70%);
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      background-color: $accessory-color2;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url('.././images/products/milkshakes-280-min.png');
+
+        @include retina {
+          background-image: url('.././images/products/milkshakes-280@2x-min.png');
+        }
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 280px;
+
+        transform: translateY(-50%);
+
+        @include tablet {
+          height: 224px;
+          background-image: url('.././images/products/milkshakes-224-min.png');
+
+          @include retina {
+            background-image: url('.././images/products/milkshakes-224@2x-min.png');
+          }
+
+          transform: translateY(-60%);
+        }
+
+        @include desktop {
+          height: 394px;
+          background-image: url('.././images/products/milkshakes-368-min.png');
+
+          @include retina {
+            background-image: url('.././images/products/milkshakes-368@2x-min.png');
+          }
+
+          transform: translateY(-70%);
+        }
+      }
+    }
+  }
+
+  &__title-h3 {
+    color: $main-textColor;
+
+    @media screen and (max-width: 767px) {
+      font-size: 20px;
+      line-height: 1.15;
+      letter-spacing: 0.04em;
+    }
+  }
+
+  &__text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 152%;
+    letter-spacing: 0.04em;
+    color: $main-textColor;
+
+    margin-bottom: 32px;
+
+    @include tablet {
+      line-height: 176%;
+    }
+
+    @include desktop {
+      font-size: 16px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__etc {
+    @include flexCenter();
+    height: 70px;
+
+    &:before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $main-textColor;
+      box-shadow: -10px 0 0 $main-textColor, 10px 0 0 $main-textColor;
+    }
+  }
+
+  &__btn {
+    @include flexCenter();
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    color: $accent-mainColor;
+    cursor: pointer;
+
+    @include transition($property1: color);
+
+    &:hover,
+    &:focus {
+      background-color: $accent-secondaryHoverColor;
+    }
+  }
+
+  &__icon-close {
+    display: none;
+
+    .products__btn.is-open & {
+      display: block;
+    }
+  }
+
+  &__icon-open {
+    display: block;
+
+    .products__btn.is-open & {
+      display: none;
+    }
+  }
+
+  &__icon-btn {
+    fill: currentColor;
+  }
+
+  &__discription {
+    position: relative;
+    overflow: auto;
+  }
+
+  &__description-add {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    height: 80%;
+    width: 100%;
+
+    display: flex;
+    text-align: center;
+    font-size: 14px;
+    padding: 15px;
+    line-height: 152%;
+    letter-spacing: 0.04em;
+    color: $main-textColor;
+    background-color: #ffb8caec;
+
+    overflow-y: auto;
+    border-radius: 24px;
+    opacity: 0;
+
+    @include transition($property1: opacity);
+
+    @include tablet {
+      padding: 10;
+    }
+
+    &.is-open {
+      opacity: 1;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(243, 103, 103);
+      outline: 1px solid rgb(230, 119, 119);
+      border-radius: 4px;
+    }
+    &--brown {
+      background-color: $accessory-color1;
+    }
+    &--green {
+      background-color: $accessory-color2;
+    }
+  }
+}

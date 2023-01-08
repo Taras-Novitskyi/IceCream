@@ -1,0 +1,284 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: $bgColor-hero;
+  padding-top: 136px;
+  width: 100%;
+  height: 444px;
+  background-image: url('../images/hero/hero-circle-mob.png'),
+    linear-gradient($bgColor-hero 50%, $bgColor-hero 0);
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../images/hero/hero-circle-mob@2x.png'),
+      linear-gradient($bgColor-hero 50%, $bgColor-hero 0);
+  }
+  background-size: 346px;
+  background-repeat: no-repeat;
+  background-position: right calc(-43px + 50%) top 25px;
+
+  @include tablet {
+    height: 416px;
+    padding-top: 94px;
+    background-size: 335px;
+    background-position: right calc(-33px + 50%) top 43px;
+  }
+
+  @include desktop {
+    height: 664px;
+    padding-top: 147px;
+    background-size: 534px;
+    background-position: right calc(-189px + 50%) top 54px;
+  }
+
+  &__box-title {
+    position: absolute;
+    z-index: 2;
+    @include tablet {
+      position: unset;
+      padding-top: 8px;
+    }
+  }
+  &__title {
+    font-family: $titleFont;
+    margin-bottom: 20px;
+    font-size: 26px;
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $main-textColor;
+
+    @include tablet {
+      font-size: 22px;
+      line-height: 1.14;
+
+      @include desktop {
+        font-size: 38px;
+        line-height: 1.16;
+        margin-bottom: 24px;
+      }
+    }
+  }
+  &__title-part {
+    font-size: 48px;
+    line-height: 0.97;
+    color: $accent-mainColor;
+
+    @include tablet {
+      font-size: 34px;
+      line-height: 0.9;
+    }
+    @include desktop {
+      font-size: 58px;
+    }
+  }
+  &__list-link {
+    display: flex;
+    gap: 8px;
+
+    @include desktop {
+      gap: 12px;
+    }
+  }
+
+  &__button {
+    height: 24px;
+    font-size: 8px;
+    line-height: 1.25;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include transition($property1: background-color, $property2: color);
+
+    @include desktop {
+      font-size: 14px;
+      line-height: 1.29;
+      height: 40px;
+    }
+  }
+
+  &__box-fon-img {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__box-img-milk {
+    display: none;
+    align-items: center;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__box-number {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+    
+    @include desktop {
+      padding-right: 18px;
+    }
+  }
+
+  &__number {
+    position: relative;
+    z-index: 1;
+    font-family: $titleFont;
+    font-size: 28px;
+    line-height: 1.14;
+    text-align: right;
+    letter-spacing: 0.04em;
+    color: $accent-mainColor;
+
+    @include desktop {
+      font-size: 46px;
+      line-height: 1.15;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -2px;
+      right: -10px;
+      display: block;
+      border-radius: 50%;
+      border: 2px;
+      width: 16px;
+      height: 16px;
+      background-color: $main-textColor;
+
+      @include desktop {
+        width: 30px;
+        height: 30px;
+        top: -4px;
+        right: -18px;
+      }
+    }
+  }
+
+  &__number-text {
+    font-family: $mainFont;
+    font-size: 8px;
+    line-height: 10px;
+    text-align: right;
+    color: $main-textColor;
+
+    &:not(:last-child) {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__text {
+    width: 114px;
+    font-size: 8px;
+    line-height: 1.5;
+    color: $main-textColor;
+    margin-bottom: 7px;
+
+    @include desktop {
+      width: 200px;
+      font-size: 14px;
+      line-height: 1.14;
+      margin-bottom: 20px;
+      margin-top: 60px;
+    }
+  }
+
+  &__img-girl {
+    position: relative;
+    bottom: -17px;
+ 
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+
+    @include desktop {
+      bottom: -20px;
+    }
+  }
+  &__img {
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    left: calc(-43px + 50%);
+    top: 34px;
+
+    animation-direction: reverse;
+    animation-duration: 1s;
+    animation-name: iceanim;
+    animation-iteration-count: 1;
+
+    animation-timing-function: linear;
+
+    @include tablet {
+      left: calc(-63px + 50%);
+      top: 80px;
+    }
+    @include desktop {
+      top: 107px;
+      left: calc(43px + 50%);
+    }
+  }
+
+  &__icon-more {
+    fill: $accent-mainColor;
+
+    @include tablet {
+      width: 5px;
+      height: 5px;
+    }
+    @include desktop {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &__dot-button {
+    display: none;
+
+    @include tablet {
+      @include flexCenter();
+      border: none;
+      width: 15px;
+      height: 15px;
+      background-color: $main-textColor;
+      border-radius: 50%;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+
+      @include transition($property1: background-color);
+    }
+
+    @include desktop {
+      width: 26px;
+      height: 26px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $accent-secondaryHoverColor;
+    }
+  }
+}
+
+@keyframes iceanim {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}

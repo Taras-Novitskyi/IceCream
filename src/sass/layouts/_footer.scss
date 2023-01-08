@@ -1,0 +1,166 @@
+.footer {
+  padding-top: 32px;
+
+  background-color: $bgColor-secondary;
+
+  @include tablet {
+    padding-top: 60px;
+  }
+
+  &__content {
+    margin-bottom: 40px;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      margin-bottom: 48px;
+    }
+
+    @include desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__wrap-text {
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    // font-style: normal;
+    // font-weight: 400;
+    font-family: $titleFont;
+    text-transform: uppercase;
+    width: 234px;
+
+    @include tablet {
+      width: 340px;
+    }
+
+    @include desktop {
+      width: 474px;
+    }
+
+    &--ordinary {
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.17;
+      color: $accent-secondaryColor;
+
+      @include tablet {
+        font-size: 26px;
+        line-height: 1.15;
+        letter-spacing: 0.04em;
+      }
+    }
+
+    &--accent {
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: 0.04em;
+      color: $accent-mainColor;
+
+      @include tablet {
+        font-size: 48px;
+        line-height: 1.15;
+        letter-spacing: 0.06em;
+      }
+    }
+  }
+
+  &__wrap-contacts {
+    @media screen and (min-width: 320px) and (max-width: 1199px) {
+      padding-bottom: 19px;
+    }
+  }
+
+  &__contact {
+    font-family: $mainFont;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.86;
+    text-align: right;
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+
+  &__contact-text {
+    color: $secondary-textColor;
+  }
+
+  &__contact-phone {
+    color: $accent-mainColor;
+    text-decoration: none;
+  }
+
+  &__wrap-rights {
+    width: 100%;
+
+    padding-bottom: 3px;
+    padding-top: 16px;
+
+    border-top: 1px solid #e1e1e1;
+
+    @include tablet {
+      padding-bottom: 9px;
+      padding-top: 10px;
+    }
+  }
+
+  &__rights {
+    width: 150px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.52;
+    text-align: center;
+
+    color: $description-textColor;
+
+    @include tablet {
+      width: 300px;
+    }
+  }
+}
+
+.social {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 28px;
+
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    height: 32px;
+    width: 32px;
+
+    background-color: #fea5bb;
+    border-radius: 50%;
+
+    @include transition($property1: background-color);
+
+    &:hover,
+    &:focus {
+      background-color: $accent-mainColor;
+    }
+  }
+
+  &__link {
+    @include flexCenter();
+
+    width: 100%;
+    height: 100%;
+  }
+}

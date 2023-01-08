@@ -1,0 +1,72 @@
+.button { 
+  @include flexCenter();
+  height: 44px;
+  min-width: 100px;
+  padding-left: 37px;
+  padding-right: 37px;
+
+  font-family: $mainFont;
+  font-size: 16px;
+  line-height: 1.31;
+  color: $accent-mainColor;
+  background-color: $main-textColor;
+
+  border-radius: 22px;
+
+  @include transition($property1: background-color);
+
+  &:hover,
+  &:focus {
+    background-color: $accent-secondaryHoverColor;
+  }
+
+  &--accent {
+    color: $main-textColor;
+    background-color: $accent-mainColor;
+
+    &:hover,
+    &:focus {
+      background-color: $accent-hoverColor;
+    }
+  }
+}
+
+// .button-secondary {
+//   display: flex;
+//   align-items: center;
+//   text-align: center;
+//   height: 24px;
+//   min-width: 50px;
+//   padding-left: 15px;
+//   padding-right: 15px;
+
+//   font-family: $mainFont;
+//   font-size: 8px;
+//   line-height: 1.25;
+//   color: $accent-mainColor;
+//   background-color: $main-textColor;
+
+//   border-radius: 20px;
+
+//   @include transition($property1: background-color);
+
+//   @include desktop {
+//     font-size: 14px;
+//   }
+
+//   &:hover,
+//   &:focus {
+//     background-color: $accent-secondaryHoverColor;
+//   }
+  
+//   &--accent {
+//     color: $main-textColor;
+//     background-color: $accent-mainColor;
+
+//     &:hover,
+//     &:focus {
+//       background-color: $accent-hoverColor;
+//     }
+//   }
+// }
+

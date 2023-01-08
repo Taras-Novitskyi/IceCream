@@ -1,0 +1,61 @@
+	.modal-header{
+		background-color: $bgColor-secondary;
+		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+		border-radius: 4px;
+
+		transform: scale(1);
+			
+		@include transition($property1:transform);
+	
+		@include mobile {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			max-height: 100%;
+			width: 320px;
+
+			overflow: auto;
+			
+			transform: translate(-50%, -50%) scale(1);
+		}
+
+		@include desktop {
+			width: 528px;
+		}
+
+		.header__backdrop.is-hidden & {
+			transform: scale(0.8);
+
+			@media screen and (min-width: 480px) {
+				transform: translate(-50%, -50%) scale(0.8);
+			}
+		}
+
+		&__close-btn{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			right: 8px;
+			top: 8px;
+			
+			@include flexCenter();
+	
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			border-radius: 50%;
+			color: $secondary-textColor;
+			background-color: $bgColor-secondary;
+	
+			@include transition($property1:color);
+	
+			&:hover, &:focus{
+				color: #d41340;
+			}
+		}
+		&__closed-icon{
+			fill: currentColor;
+		}
+	}
+
+	body.modal-open {
+		overflow: hidden;
+	}

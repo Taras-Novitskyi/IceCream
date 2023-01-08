@@ -1,0 +1,293 @@
+.about {
+  background-color: $bgColor-secondary;
+  padding-top: 60px;
+  padding-bottom: 40px;
+
+  @include tablet {
+    padding-bottom: 60px;
+  }
+
+  @include desktop {
+    padding-bottom: 121px;
+
+    background-position: 50% 85%;
+    background-image: url('../images/about/milk-bg-desk.png');
+    background-repeat: no-repeat;
+    // background-size: contain;
+    background-size: 100% 521px;
+  }
+
+  @include desktop {
+    @include retina {
+      background-position: 50% 85%;
+      background-image: url('../images/about/milk-bg-desk-2x.png');
+      background-repeat: no-repeat;
+      // background-size: contain;
+      background-size: 100% 521px;
+    }
+  }
+
+  &__title-secondary {
+    margin-bottom: 15px;
+
+    @include tablet {
+      margin-bottom: 16px;
+    }
+
+    @include desktop {
+      margin-bottom: 16px;
+    }
+  }
+  &__title {
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+    @include desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__article {
+    @include tablet {
+      @include flexCenter();
+      gap: 30px;
+    }
+
+    @include desktop {
+      gap: 100px;
+    }
+  }
+
+  &__article-image {
+    width: 100%;
+    height: 279px;
+    background-image: url('../images/about/cow-mob.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    margin-bottom: 40px;
+
+    @include retina {
+      background-image: url('../images/about/cow-mob-2x.png');
+    }
+
+    @include tablet {
+      width: 336px;
+      height: 335px;
+      background-image: url('../images/about/cow-tab.png');
+    }
+
+    @include tablet {
+      @include retina {
+        background-image: url('../images/about/cow-tab-2x.png');
+      }
+    }
+
+    @include desktop {
+      width: 501px;
+      height: 501px;
+      margin-bottom: 0;
+      margin-left: -100px;
+      background-image: url('../images/about/cow-desk.png');
+    }
+
+    @include desktop {
+      @include retina {
+        background-image: url('../images/about/cow-desk-2x.png');
+      }
+    }
+  }
+  &__article-content {
+    display: block;
+    background-position: 50% 30%;
+    background-image: url('../images/about/milk-bg-mob.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include retina {
+      display: block;
+      background-position: 50% 30%;
+      background-image: url('../images/about/milk-bg-mob-2x.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    @include tablet {
+      background-image: none;
+    }
+  }
+
+  &__article-header {
+    margin-bottom: 20px;
+    max-width: 220px;
+
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(19 / 12);
+    color: $secondary-textColor;
+
+    @include tablet {
+      max-width: 334px;
+      margin-bottom: 30px;
+
+      font-size: 14px;
+      line-height: calc(25 / 14);
+    }
+
+    @include desktop {
+      max-width: 463px;
+      margin-bottom: 32px;
+
+      font-size: 16px;
+      line-height: calc(28 / 16);
+    }
+  }
+  &__article-description {
+    max-width: 220px;
+    margin-bottom: 20px;
+
+    font-family: $mainFont;
+    // font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(19 / 12);
+    color: $description-textColor;
+
+    @include tablet {
+      max-width: 334px;
+      margin-bottom: 40px;
+
+      font-size: 14px;
+      line-height: calc(25 / 14);
+    }
+
+    @include desktop {
+      max-width: 463px;
+      margin-bottom: 40px;
+
+      font-size: 14px;
+      line-height: calc(27 / 14);
+    }
+  }
+
+  br {
+    content: '';
+    display: block;
+    margin: 10px 0;
+
+    @include desktop {
+      margin: 20px 0;
+    }
+  }
+
+  &__button {
+    @include flexCenter();
+    width: 176px;
+    height: 44px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 32px;
+
+    font-family: $mainFont;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(18 / 14);
+    color: $accent-mainColor;
+    background: $main-textColor;
+    border-radius: 22px;
+    border: transparent;
+
+    @include transition($property1: background-color);
+
+    &:hover,
+    &:focus {
+      background-color: $accent-secondaryHoverColor;
+    }
+
+    @include tablet {
+      font-size: 16px;
+      line-height: calc(21 / 16);
+    }
+  }
+
+  &__icon-button {
+    fill: transparent;
+    stroke: currentColor;
+    margin-left: 14px;
+  }
+
+  // about-modal
+
+  &__modal {
+    position: fixed;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+
+    width: 75vw;
+    max-height: 80%;
+    padding: 30px 50px;
+    text-align: center;
+
+    box-shadow: 0px 0px 10px 0px rgba(255, 184, 202, 1);
+    border-radius: 4px;
+    background-color: #fff;
+
+    overflow: auto;
+
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+
+    @include transition($property1: opacity, $property2: transform);
+
+    &.is-hidden {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+  }
+
+  &__modal-container {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  &__modal-bottom {
+    padding: 0px;
+    overflow: auto;
+    color: $description-textColor;
+  }
+  &__modal-text {
+    margin-bottom: 10px;
+  }
+
+  &__button-close {
+    position: absolute;
+		width: 30px;
+		height: 30px;
+		right: 8px;
+		top: 8px;
+
+    @include flexCenter();
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+		border-radius: 50%;
+		color: $secondary-textColor;
+		background-color: $bgColor-secondary;
+	
+		@include transition($property1:color);
+	
+			&:hover, &:focus{
+				color: #d41340;
+			}
+  }
+
+  &__icon-close {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+}

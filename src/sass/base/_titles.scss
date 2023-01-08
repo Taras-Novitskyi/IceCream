@@ -1,0 +1,39 @@
+.title {
+  font-family: $titleFont;
+  font-size: 34px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: $accent-mainColor;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 48px;
+  }
+
+  @include desktop {
+    font-size: 58px;
+    line-height: 1.38;
+    letter-spacing: 0.06em;
+  }
+}
+
+.title-secondary {
+  font-family: $titleFont;
+  font-size: 18px;
+  line-height: calc(21 / 18);
+  text-align: center;
+  color: $accent-secondaryColor;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 26px;
+    line-height: calc(30 / 26);
+  }
+
+  @include desktop {
+    font-size: 30px;
+    line-height: calc(34 / 30);
+    letter-spacing: 0.04em;
+  }
+}
