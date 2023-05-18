@@ -1,101 +1,58 @@
-**Read in other languages: [Русский](README.md), [Polski](README.pl.md).**
 
-# Parcel template
+#  Ice Cream
+The "Ice Cream Online Store" project is a website designed to provide convenience for customers to order and purchase a variety of ice cream online. The website features an attractive and user-friendly design that allows users to easily browse the available ice cream selection and place orders.
 
-Этот проект был создан при помощи Parcel. Для знакомства и настройки
-дополнительных возможностей [обратись к документации](https://parceljs.org/).
+## Features
 
-## Подготовка нового проекта
+- Ice cream assortment browsing: Users can explore different flavors, types, and sizes of ice cream presented on the website.
+- Order placement: After selecting the desired products, users can proceed to place an order by providing necessary information such as delivery address and contact details.
+- Production process and location information: Users can access information about the ice cream production process, providing insights into the quality and craftsmanship. Additionally, users can find details about physical store locations where they can purchase ice cream in-person.
+- Customer support: Users can reach out to customer support if they have any inquiries or require additional assistance. 
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Склонируй этот репозиторий.
-3. Измени имя папки с `parcel-project-template` на имя своего проекта.
-4. Создай новый пустой репозиторий на GitHub.
-5. Открой проект в VSCode, запусти терминал и свяжи проект с GitHub-репозиторием
-   [по инструкции](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url).
-6. Установи зависимости проекта в терминале командой `npm install` .
-7. Запусти режим разработки, выполнив команду `npm start`.
-8. Перейди в браузере по адресу [http://localhost:1234](http://localhost:1234).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
 
-## Файлы и папки
 
-- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
-  файлы стилей страниц. Например, для `index.html` файл стилей называется
-  `index.scss`.
-- Изображения добавляй в папку `src/images`. Сборщик оптимизирует их, но только
-  при деплое продакшн версии проекта. Все это происходит в облаке, чтобы не
-  нагружать твой компьютер, так как на слабых машинах это может занять много
-  времени.
+## Usage
 
-## Деплой
+The "Ice Cream Online Store" project is implemented using web technologies, including HTML, CSS/SCSS and JavaScript. The web pages of the site are developed using responsive design to ensure optimal display across different devices and screen sizes.
 
-Для настройки деплоя проекта необходимо выполнить несколько дополнительных шагов
-по настройке твоего репозитория. Зайди во вкладку `Settings` и в подсекции
-`Actions` выбери выбери пункт `General`.
 
-![GitHub actions settings](./assets/actions-config-step-1.png)
+This project was created with [Create React App](https://github.com/facebook/create-react-app).
+To get acquainted and configure additional features
+[refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Пролистай страницу до последней секции, в которой убедись что выбраны опции как
-на следующем изображении и нажми `Save`. Без этих настроек у сборки будет
-недостаточно прав для автоматизации процесса деплоя.
 
-![GitHub actions settings](./assets/actions-config-step-2.png)
 
-Продакшн версия проекта будет автоматически собираться и деплоиться на GitHub
-Pages, в ветку `gh-pages`, каждый раз когда обновляется ветка `main`. Например,
-после прямого пуша или принятого пул-реквеста. Для этого необходимо в файле
-`package.json` отредактировать поле `homepage` и скрипт `build`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+## Installation
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/",
-"scripts": {
-  "build": "parcel build src/*.html --public-url /your_repo_name/"
-},
+To run the Phonebook app locally, follow these steps:
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
 ```
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+Navigate to the project directory:
 
-![GitHub Pages settings](./assets/repo-settings.png)
+```bash
+cd IceCream
+```
+Install the dependencies:
 
-### Статус деплоя
+```bash
+npm install
+```
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
+Start the development server:
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
+```bash
+npm start
+```
 
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
+Go to [http://localhost:3000](http://localhost:3000) in your browser.
+This page will automatically reload after saving changes to the project files.
 
-![Deployment status](./assets/status.png)
+## Demo
 
-### Живая страница
+https://taras-novitskyi.github.io/IceCream/
 
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` или скрипта `build` в
-файле `package.json`.
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
